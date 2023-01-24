@@ -60,7 +60,7 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
             .then(({ tally }) =>
               chrome.storage.local.set({ tally: (tally || 0) + 1 })
             );
-        }, 2000);
+        }, 1000);
       }
     });
 });
