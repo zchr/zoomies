@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Goodbye Zoomies",
+  "name": "Goodnight Tabs",
   "description": "Close tabs that launch other apps",
   "version": "0.5",
   "action": {
