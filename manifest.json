@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Goodbye Zoomies",
+  "description": "Close tabs that launch other apps",
+  "version": "0.5",
+  "action": {
+    "default_popup": "index.html"
+  },
+  "icons": {
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": ["tabs", "scripting", "storage"],
+  "host_permissions": ["https://*/*"],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
