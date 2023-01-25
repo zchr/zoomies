@@ -5,18 +5,21 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
 
   async function execute() {
     function isAsanaPage() {
-      return isMatch("asana", "asana.com", "Opening link in Asana");
+      return isMatch("asana", "asana.com", ["Opening link in Asana"]);
     }
 
     function isNotionPage() {
-      return isMatch("notion", "notion.so", "Redirecting to your Notion app");
+      return isMatch("notion", "notion.so", ["Redirecting to your Notion app"]);
     }
 
     function isZoomPage() {
-      return isMatch("zoom", "zoom.us", "Your meeting has been launched");
+      return isMatch("zoom", "zoom.us", [
+        "Your meeting has been launched",
+        "on the dialog shown by your browser",
+      ]);
     }
 
-    async function isMatch(name, origin, search) {
+    async function isMatch(name, origin, searches) {
       const regex = new RegExp(`https://[a-z]*\\.${origin}`);
       const isSiteActive = (await chrome.storage.local.get("sites")).sites[
         name
@@ -25,11 +28,13 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
       return (
         isSiteActive &&
         window.location.origin.match(regex) &&
-        window.find(
-          search,
-          /* aCaseSensitive */ false,
-          /* aBackwards */ false,
-          /* aWrapAround */ true
+        searches.find((search) =>
+          window.find(
+            search,
+            /* aCaseSensitive */ false,
+            /* aBackwards */ false,
+            /* aWrapAround */ true
+          )
         )
       );
     }
