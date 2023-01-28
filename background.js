@@ -34,6 +34,12 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
       return isMatch("notion", "notion.so", ["Redirecting to your Notion app"]);
     }
 
+    function isSlackPage() {
+      return isMatch("slack", "slack.com/archives/", [
+        "We’ve redirected you to the desktop app.",
+      ]);
+    }
+
     function isTeamsPage() {
       return isMatch("teams", "teams.live.com", ["Open your Teams app"]);
     }
@@ -74,6 +80,7 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
       isLinearPage,
       isMiroPage,
       isNotionPage,
+      isSlackPage,
       isTeamsPage,
       isZoomPage,
     ];

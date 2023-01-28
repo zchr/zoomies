@@ -15,6 +15,7 @@ An extension to auto-close tabs after they open native apps. Useful for sites li
 - Figma ([figma.com](https://figma.com))
 - Miro ([miro.com](https://miro.com))
 - Notion ([notion.so](https://notion.so))
+- Slack ([slack.com](https://slack.com))
 - Teams ([teams.live.com](https://teams.live.com))
 - Zoom ([zoom.us](https://zoom.us))
 
@@ -29,7 +30,7 @@ Feel free to [create an issue](https://github.com/zchr/zoomies/issues/new) with 
 
 Requires updates the following places:
 
-1. Add new checkbox in `script.js`
+1. Add new checkbox in `index.html`
 2. Add new match function in `background.js`, and include function in the `checks` array
 3. Add the domain to `manifest.json`
 4. Add the domain to `README.md` (^^)
