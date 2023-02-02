@@ -13,6 +13,7 @@ An extension to auto-close tabs after they open native apps. Useful for sites li
 - Asana ([asana.com](https://asana.com))
 - AWS ([awsapps.com](https://awsapps.com))
 - Figma ([figma.com](https://figma.com))
+- Linear ([linear.app](https://linear.app))
 - Miro ([miro.com](https://miro.com))
 - Notion ([notion.so](https://notion.so))
 - Teams ([teams.live.com](https://teams.live.com))
