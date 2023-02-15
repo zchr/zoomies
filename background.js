@@ -1,5 +1,5 @@
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-  if (changeInfo.status != "complete" || !tab.active) {
+  if (!tab.active) {
     return;
   }
 
@@ -32,6 +32,12 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
 
     function isNotionPage() {
       return isMatch("notion", "notion.so", ["Redirecting to your Notion app"]);
+    }
+
+    function isSlackPage() {
+      return isMatch("slack", "slack.com/archives/", [
+        "We’ve redirected you to the desktop app.",
+      ]);
     }
 
     function isTeamsPage() {
@@ -74,6 +80,7 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
       isLinearPage,
       isMiroPage,
       isNotionPage,
+      isSlackPage,
       isTeamsPage,
       isZoomPage,
     ];

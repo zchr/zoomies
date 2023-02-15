@@ -20,6 +20,7 @@
     "https://*.linear.app/*",
     "https://*.miro.com/*",
     "https://*.notion.so/*",
+    "https://*.slack.com/*",
     "https://teams.live.com/*",
     "https://*.zoom.us/*"
   ],
