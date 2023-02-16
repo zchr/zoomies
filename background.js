@@ -1,5 +1,5 @@
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-  if (!tab.active) {
+  if (changeInfo.status != "complete" || !tab.active) {
     return;
   }
 
@@ -36,7 +36,7 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
 
     function isSlackPage() {
       return isMatch("slack", "slack.com/archives/", [
-        "We’ve redirected you to the desktop app.",
+        "open this link in your browser",
       ]);
     }
 
