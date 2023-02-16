@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Goodnight Tabs",
   "description": "Close tabs that launch other apps",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "action": {
     "default_popup": "index.html"
   },
