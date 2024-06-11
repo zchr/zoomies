@@ -13,7 +13,11 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     }
 
     function isAWSPage() {
-      return isMatch("aws", "awsapps.com", ["You may now close this browser"]);
+      return isMatch("aws", "awsapps.com", [
+        "You may now close this browser",
+        "You can close this window",
+        "We recommend you close this browser",
+      ]);
     }
 
     function isFigmaPage() {
